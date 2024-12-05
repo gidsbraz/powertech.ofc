@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../Styles/login.css">
+  <link rel="icon" href="/img/logo-mini.png" type="image/png" />
+
+</head>
+<body>
+  <div class="container">
+    <img src="../img/logo.png" alt="Logo da Power Tech">
+    <h1>Bem Vindo de Volta</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="exemplo@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" placeholder="*******" required>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <p class="forgot-password">Esqueceu sua senha?</p>
+    </form>
+    <div class="divider">
+      <span>Ou</span>
+    </div>
+    <div class="social-login">
+      <button class="btn-google">Faça Login com o Google</button>
+    </div>
+    <p class="sign-up">Ainda não tem uma conta? <a href="./cadastro.html">Cadastre-se</a></p>
+  </div>
+  <script>
+    const user = 'admin';
+    const password = 'admin';
+
+      const form = document.getElementById('loginForm');
+      form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('password').value;
+
+  if (email === user && senha === password) {
+    window.location.href = 'dashboard.html';
+  } else {
+    alert('Usuário ou senha incorretos');
+  }
+});
+  </script>
+</body>
+</html>
